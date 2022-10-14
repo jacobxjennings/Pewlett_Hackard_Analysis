@@ -94,7 +94,7 @@ This returns 72,458.
 
 The following code provides a count of retirement eligible employees per department:
 
-SELECT COUNT(ut.emp_no), d.dept_name
+```SELECT COUNT(ut.emp_no), d.dept_name
 		INTO retirees_per_dept
 		FROM unique_titles AS ut
 		INNER JOIN dept_emp AS de
@@ -102,8 +102,10 @@ SELECT COUNT(ut.emp_no), d.dept_name
 		INNER JOIN departments as d
 		ON (de.dept_no = d.dept_no)
 		GROUP BY dept_name
-		ORDER BY count DESC
+		ORDER BY count DESC```
 
-This query produces the following results: ![Retirement Eligible Employees](https://github.com/jacobxjennings/Pewlett_Hackard_Analysis/blob/main/Retirees_per_Dept.PNG?raw=true)
+This query produces the following results: 
 
-After using the following code to return the number of eeligible employees in membership eligibility, it does not seem like tehre are enough employees to fill the needed position. 
+![Retirement Eligible Employees](https://github.com/jacobxjennings/Pewlett_Hackard_Analysis/blob/main/Retirees_per_Dept.PNG?raw=true)
+
+After using *SELECT COUNT(emp_no) FROM mentorship_eligibility* code to return the number of eeligible employees in membership eligibility, it does not seem like tehre are enough employees to fill the needed position. 
