@@ -50,13 +50,9 @@ ORDER BY emp_no;
 
 SELECT SUM(count) FROM retiring_titles
 
-SELECT COUNT(emp_no) FROM unique_titles
-
 -- Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
 SELECT COUNT(emp_no) FROM mentorship_eligibility
-SELECT * FROM mentorship_eligibility
-
 
 -- Retrieve the number of employees retiring per department.
 
@@ -70,12 +66,3 @@ ON (de.dept_no = d.dept_no)
 GROUP BY dept_name
 ORDER BY count DESC
 SELECT * FROM retirees_per_dept
-
-
--- Find the youngest employee
-select e.emp_no,
-e.first_name,
-e.last_name,
-e.birth_date
-from employees as e
-ORDER BY birth_date DESC

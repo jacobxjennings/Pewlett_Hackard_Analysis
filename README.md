@@ -84,4 +84,26 @@ Lastly, we can run queries on the data. This is used to filter data within diffe
 
 
 ## Summary
+- How many roles will need to be filled as the "silver tsunami" begins to make an impact?
 
+```SELECT COUNT(emp_no) FROM unique_titles```
+
+This returns 72,458. 
+
+- Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
+
+The following code provides a count of retirement eligible employees per department:
+
+SELECT COUNT(ut.emp_no), d.dept_name
+		INTO retirees_per_dept
+		FROM unique_titles AS ut
+		INNER JOIN dept_emp AS de
+		ON (ut.emp_no = de.emp_no)
+		INNER JOIN departments as d
+		ON (de.dept_no = d.dept_no)
+		GROUP BY dept_name
+		ORDER BY count DESC
+
+This query produces the following results: ![Retirement Eligible Employees](https://)
+
+After using the following code to return the number of eeligible employees in membership eligibility, it does not seem like tehre are enough employees to fill the needed position. 
