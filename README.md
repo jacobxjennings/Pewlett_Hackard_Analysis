@@ -82,6 +82,12 @@ Lastly, we can run queries on the data. This is used to filter data within diffe
     ON ce.emp_no = de.emp_no
     GROUP BY de.dept_no;
 
+## Deliverables
+
+**Retirement Titles:** This query merges data from the employees and titles tables into retirement titles. They are joined together by the employee number column and query based on employees born between 1952 and 1955. 
+
+**Unique Titles:** The query above does not exclude employees that are no longer working for the company. Additional, it includes duplicate entries. Therefore, this new table contain the titles for all current employees using SELECT DISTINCT to delete duplicate entries. 
+
 
 ## Summary
 - How many roles will need to be filled as the "silver tsunami" begins to make an impact?
