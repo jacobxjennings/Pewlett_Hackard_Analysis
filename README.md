@@ -7,8 +7,7 @@ The goal of our analysis is to determine the number of employees that are reachi
 
 To being this analysis, we use QuickDBD to map out our database. Below is the code:
 
-    ```
-    Departments
+    ```Departments
     -
     dept_no varchar pk fk - Dept_Emp.dept_no
     dept_name varchar
@@ -48,13 +47,11 @@ To being this analysis, we use QuickDBD to map out our database. Below is the co
     emp_no int pk fk -< Employees.emp_no
     title varchar 
     from_date date
-    to_date date
-    ```
+    to_date date```
 
 Next, we need to create tables and relationships within the tables in our SQL database. Below is an example of two tables being created:
 
-    ```
-    -- Creating tables for PH-EmployeeDB
+    ```-- Creating tables for PH-EmployeeDB
     CREATE TABLE departments (
         dept_no VARCHAR(4) NOT NULL,
         dept_name VARCHAR(40) NOT NULL,
@@ -70,25 +67,20 @@ Next, we need to create tables and relationships within the tables in our SQL da
         gender VARCHAR NOT NULL,
         hire_date DATE NOT NULL,
         PRIMARY KEY (emp_no)
-    );
-    ```
+    );```
 
 Following the formation of our schema, the data must be imported from our CSV files. This is easily done within pgAdmin by right-clicking on each table and importing the corresponding data. We can then check, within the query editior, if the data imported successfully by typing: 
     
-    ```
-    SELECT * FROM 'table';
-    ```
+    ```SELECT * FROM 'table';```
 
 Lastly, we can run queries on the data. This is used to filter data within different table into one seperate sheet. An example of this is using the following code to return a count of employees in each department: 
 
-    ```
-    -- Employee count by department number
+    ```-- Employee count by department number
     SELECT COUNT(ce.emp_no), de.dept_no
     FROM current_emp as ce
     LEFT JOIN dept_emp as de
     ON ce.emp_no = de.emp_no
-    GROUP BY de.dept_no;
-    ```
+    GROUP BY de.dept_no;```
 
 
 ## Summary
