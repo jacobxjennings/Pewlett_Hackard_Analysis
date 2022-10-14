@@ -104,6 +104,6 @@ SELECT COUNT(ut.emp_no), d.dept_name
 		GROUP BY dept_name
 		ORDER BY count DESC
 
-This query produces the following results: ![Retirement Eligible Employees](https://)
+This query produces the following results: ![Retirement Eligible Employees](https://github.com/jacobxjennings/Pewlett_Hackard_Analysis/blob/main/Retirees_per_Dept.PNG?raw=true)
 
 After using the following code to return the number of eeligible employees in membership eligibility, it does not seem like tehre are enough employees to fill the needed position. 
